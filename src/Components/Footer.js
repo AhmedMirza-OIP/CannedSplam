@@ -71,7 +71,7 @@ function Footer() {
           <div className="footer-1st-col">
             <img src={LOGO} className="footer-logo" />
             <div className="copyrights-and-social">
-              <div clasName="social-icons-div">
+              <div className="social-icons-div">
                 <FontAwesomeIcon
                   icon={faFacebookSquare}
                   className="social-icon"

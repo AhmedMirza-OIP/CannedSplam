@@ -123,9 +123,6 @@ function HomePage() {
         "Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available  Lorem ipsum may be used as a placeholder before final copy is available..",
     },
 
-
-
-
     {
       _id: 121,
       title:
@@ -327,7 +324,6 @@ function HomePage() {
   ]);
 
   const [completedDesktop, setCompletedDesktop] = useState([
-   
     {
       _id: 3,
       heading: "great marshal",
@@ -561,6 +557,7 @@ function HomePage() {
           <div className="row center-most-popular-in-mobile spacing-adjust">
             {mostPopular.map((item, idx) => (
               <MostWantedNovelsMapper
+                key={idx}
                 item={item}
                 onClick={() => console.log("Book Card")}
               />
@@ -581,6 +578,7 @@ function HomePage() {
           <div className="row row-425 spacing-adjust">
             {ongoing.map((item, idx) => (
               <OngoingNovelsMapper
+              key={idx}
                 item={item}
                 onClick={() => console.log("Book Card")}
               />
@@ -600,6 +598,7 @@ function HomePage() {
               <div className="books-container">
                 {top10.map((ele, idx) => (
                   <Top10Mapper
+                  key={idx}
                     item={ele}
                     index={idx}
                     onClick={() => console.log("Top 10")}
@@ -614,6 +613,7 @@ function HomePage() {
               <div className="row-425 row-426 recent-width recent-books-container">
                 {recent.map((ele, idx) => (
                   <Top10Mapper
+                  key={idx}
                     item={ele}
                     index={idx}
                     onClick={() => console.log("Top 10")}
@@ -738,23 +738,21 @@ function HomePage() {
           <p className="section-heading">COMPLETED NOVELS</p>
           {/* </div> */}
           <div className="row">
-            {window.screen.width > 1024 
-            ?
-             completedDesktop.map((item, idx) => (
-              <CompletedNovels
-                item={item}
-                onClick={() => console.log("Book Card")}
-              />
-            ))
-            :
-              completed.map((item, idx) => (
-              <CompletedNovels
-                item={item}
-                onClick={() => console.log("Book Card")}
-              />
-            ))
-            
-            }
+            {window.screen.width > 1024
+              ? completedDesktop.map((item, idx) => (
+                  <CompletedNovels
+                  key={idx}
+                    item={item}
+                    onClick={() => console.log("Book Card")}
+                  />
+                ))
+              : completed.map((item, idx) => (
+                  <CompletedNovels
+                  key={idx}
+                    item={item}
+                    onClick={() => console.log("Book Card")}
+                  />
+                ))}
           </div>
         </div>
 
@@ -762,10 +760,13 @@ function HomePage() {
         <p className="recent-updates-label">Recent Chapter Updates</p>
 
         <div className="books-table mt-3 mb-5">
-          <table class="table recent-update-table table-striped">
-            <thead class="table-header">
+          <table className="table recent-update-table table-striped">
+            <thead className="table-header">
               <tr>
-                <th scope="col" className="pl-4 border-0 table-header-labels th-1">
+                <th
+                  scope="col"
+                  className="pl-4 border-0 table-header-labels th-1"
+                >
                   Book
                 </th>
                 <th scope="col" className="border-0 table-header-labels th-2">
@@ -779,7 +780,8 @@ function HomePage() {
             </thead>
             <tbody>
               {chapterUpdates.map((item, idx) => (
-                <tr className={idx%2 !== 0 && "color-border"}>
+                // <tr key={idx} className={(idx % 2 !== 0 && "color-border"}>
+                <tr key={idx} className={`${idx % 2 !== 0 && 'color-border'}`}>
                   <td className="border-0 ">
                     <p className="table-labels pl-4">{item.name} </p>
                   </td>

@@ -5,18 +5,19 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faThLarge, faSortDown } from "@fortawesome/free-solid-svg-icons";
 import HeaderSearch from "./HeaderSearch";
 import HeaderDropdown from "./HeaderDropdown";
+import { useNavigate } from "react-router-dom";
 
 function Header(props) {
   const [text, setText] = useState("");
   const [showDropdown, setShowDropdown] = useState(false);
+  const navigate = useNavigate();
   return (
     <div className="container-fluid header-bg">
       <div className="container">
         <div className="row header-items ">
-          <div className="myitem col-md-3">
+          <div className="myitem col-md-3" onClick={() => navigate("/")}>
             <img src={Logo} className="header-logo" />
             <img src={CS} className="small-logo" />
-  
           </div>
 
           <div className="myitem col-md-2 mt-2">
@@ -37,38 +38,38 @@ function Header(props) {
               onClick={() => setShowDropdown(!showDropdown)}
             >
               <p className="user-acc-label">C</p>
-              {showDropdown && <HeaderDropdown closeDropDown={setShowDropdown} />}
+              {showDropdown && (
+                <HeaderDropdown closeDropDown={setShowDropdown} />
+              )}
             </div>
           </div>
           <div className="col-sm-12 col-12 tabs-header">
-            <ul class="nav nav-pills nav-fill">
-              <li class="nav-item">
-                <a class="nav-link" href="#">
+            <ul className="nav nav-pills nav-fill">
+              <li className="nav-item">
+                <a className="nav-link" href="#">
                   Categories
                 </a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
+              <li className="nav-item">
+                <a className="nav-link" href="#">
                   Ongoing
                 </a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
+              <li className="nav-item">
+                <a className="nav-link" href="#">
                   Finished
                 </a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link">New</a>
+              <li className="nav-item">
+                <a className="nav-link">New</a>
               </li>
             </ul>
           </div>
-    
         </div>
 
         {/* {showDropdown && <HeaderDropdown closeDropDown={setShowDropdown} />} */}
       </div>
     </div>
-
   );
 }
 

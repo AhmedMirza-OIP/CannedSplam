@@ -865,6 +865,7 @@ tr.color-border {
 }
 
 /*------ new css -----*/
+
 .tabs-header .nav-item .nav-link {
   color: #cbcbcb;
   font-size: 16px;
@@ -923,6 +924,153 @@ tr.color-border {
   content: "\f0d9";
   font-family: fontawesome;
 }
+.side-bar-tabs > li.nav-item {
+  flex: 50%; /* or - flex: 0 50% - or - flex-basis: 50% - */
+}
+
+
+
+/*======= searchbar page ===========*/
+
+.search-page {
+  font-family: "Montserrat-Medium";
+}
+.search-page {
+  padding-top: 35px;
+  padding-bottom: 50px;
+}
+h1.sidebar-heading {
+  font-size: 27px;
+  font-family: "Montserrat-semibold";
+  margin-bottom: 30px;
+  color: #333;
+}
+.side-bar-tabs .nav-link {
+  color: #666;
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+.side-bar-tabs .nav-link.active {
+  background: darkgray;
+}
+
+.top-main-head {
+  font-size: 28px;
+  color: rgba(18,18,23,.6);
+  font-family: 'montserrat-semibold';
+  padding-bottom: 20px;
+  border-bottom: 2px solid #ebeaea;
+}
+
+h3.top-heading {
+  font-size: 16px;
+  color: rgb(93 93 110 / 60%);
+  font-family: 'montserrat-semibold';
+  margin-top: 10px;
+}
+.serach-tabs {
+  margin-top: 12px;
+}
+
+.serach-tabs .nav-link {
+  border: 2px solid #8080803d;
+  border-radius: 50px;
+  color: #666;
+  font-size: 15px;
+  margin-right: 10px;
+}
+.search-tabs .nav-link.active {
+  background-color: darkgray;
+}
+
+.serach-tabs .nav-link.active {
+  background: darkgray;
+}
+
+.serach-tabs .nav-item:last-child .nav-link {
+  margin-right: 0;
+}
+.top-row .top-col {
+  padding-right: 0;
+}
+.sort-heading {
+  margin-top: 2.5rem;
+}
+span.chapter svg {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+.featured-img {
+  width: 100%;
+  height: 100%;
+}
+h1.novel-heading {
+  font-size: 20px;
+  font-family: 'montserrat-semibold';
+}
+
+p.novel-excerpt {
+  display: -webkit-box;
+  overflow: hidden;
+  word-wrap: break-word;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  letter-spacing: 0.5px;
+  color: #666;
+  margin-bottom: 0;
+}
+
+span.rating {
+  color: #777;
+  margin-right: 14px;
+  font-family: 'montserrat-semibold';
+  font-size: 16px;
+}
+
+span.chapter {
+  color: #777;
+  font-size: 16px;
+  font-family: 'montserrat-semibold';
+}
+
+span.chapter svg path {
+  fill: #777 !important;
+}
+
+.star i {
+  color: red;
+  font-size: 20px;
+}
+.sorting-content .row {
+  align-items: flex-end;
+}
+.rating-chapter {
+  margin-top: 5px;
+  margin-bottom: 1rem;
+}
+.sorting-content {
+  margin-top: 2rem;
+}
+.novel-box {
+  margin-bottom: 1.5rem;
+}
+span.rating i {
+  margin-right: 5px;
+}
+.novel-box a {
+  color: #333;
+}
+.novel-box a:hover {
+  text-decoration: none;
+}
+.side-bar-tabs .nav-link {
+  display: inline-block;
+}
+
+/*======= searchbar page end===========*/
+
+
+
 
 /*----- media query start ----*/
 
@@ -932,6 +1080,29 @@ tr.color-border {
     width: 100%;
     margin: 0 auto;
   }
+}
+
+@media (max-width: 1366px) {
+
+  /*----- searchbar page ----*/
+
+  .serach-tabs .nav-link {
+    font-size: 12px;
+  }
+  .side-bar-tabs .nav-link {
+    font-size: 16px;
+  }
+  h1.sidebar-heading {
+    font-size: 22px;
+  }
+  .top-main-head {
+    font-size: 24px;
+  }
+  p.novel-excerpt {
+    font-size: 14px;
+  }
+
+  /*----- searchbar page ----*/
 }
 
 @media (min-width: 1024px) {
@@ -1136,6 +1307,19 @@ tr.color-border {
     flex: 0 0 50%;
     max-width: 50%;
   }
+
+  /*== searchbar page ==*/
+
+  h1.novel-heading {
+    font-size: 16px;
+  }
+  span.rating {
+    font-size: 12px;
+  }
+  span.chapter {
+    font-size: 12px;
+  }
+  /*== searchbar page end==*/
 }
 
 @media (max-width: 1024px) and (min-width: 992px) {
@@ -1147,6 +1331,31 @@ tr.color-border {
     flex: 0 0 24.666667%;
     max-width: 24.666667%;
   }
+
+  /*=== searchbar page ===*/
+
+  .side-bar-tabs .nav-link {
+    font-size: 14px;
+  }
+  .content-type-tabs li:last-child {
+    margin-top: 10px;
+  }
+  h1.novel-heading {
+    font-size: 16px;
+  }
+  p.novel-excerpt {
+    font-size: 13px;
+  }
+  .star i {
+    font-size: 14px;
+  }
+  span.rating {
+    font-size: 12px;
+  }
+  span.chapter {
+    font-size: 12px;
+  }
+  /*=== searchbar page end===*/
 }
 
 @media (max-width: 991px) {
@@ -1363,6 +1572,41 @@ tr.color-border {
   .mobil-block {
     display: block;
   }
+
+  /*==== searchbar page ===*/
+
+  .side-bar-tabs .nav-link {
+    font-size: 13px;
+  }
+  .content-status {
+    margin-top: 25px !important;
+  }
+  h1.sidebar-heading {
+    font-size: 18px;
+  }
+  h3.top-heading {
+    font-size: 15px;
+  }
+  p.novel-excerpt {
+    font-size: 13px;
+  }
+  span.rating {
+    font-size: 14px;
+  }
+  span.chapter {
+    font-size: 14px;
+  }
+  .star i {
+    font-size: 16px;
+  }
+  .top-main-head {
+    font-size: 20px;
+  }
+  .side-bar-tabs > li.nav-item {
+    flex: 100%;
+  }
+  
+  /*==== searchbar page end===*/
 }
 
 @media (max-width: 767px) {
@@ -1616,6 +1860,58 @@ tr.color-border {
   .most-wanted-books .mp-book-heading {
     display: none;
   }
+  .tabs-header .nav-link {
+    padding: 0.5rem 0.2rem;
+  }
+
+  /*==== searchbar page ===*/
+
+  .side-bar-tabs > li.nav-item {
+    flex: 33.33% 1;
+    text-align: center;
+  }
+  .side-bar-tabs > li.nav-item a {
+    border: 1px solid #999;
+  }
+  .side-bar-tabs > li.nav-item a {
+    display: block;
+    margin: 0 6px;
+    margin-bottom: 12px;
+    padding: 8px 7px;
+  }
+  .serach-tabs .nav-item {
+    width: 50%;
+    text-align: center;
+    margin-bottom: 12px;
+  }
+  .serach-tabs .nav-item:last-child .nav-link {
+    margin-right: 10px;
+  }
+  h1.sidebar-heading {
+    font-size: 20px;
+  }
+  .top-main-head {
+    margin-top: 1.2rem;
+  }
+  h1.novel-heading {
+    font-size: 18px;
+  }
+  p.novel-excerpt {
+    font-size: 14px;
+  }
+  span.rating {
+    font-size: 12px;
+  } 
+  span.chapter {
+    font-size: 12px;
+  }
+  .star i {
+    font-size: 13px;
+  }
+  .serach-tabs .nav-link {
+    font-size: 13px;
+  }
+  /*==== searchbar page end===*/
 }
 
 @media (max-width: 767px) {
@@ -2036,21 +2332,6 @@ tr.color-border {
   }
 }
 
-/* @media (max-width: 991px) and (min-width: 769px) {
-  .header-dropdown {
-    right: 115px !important;
-  }
-}
-@media (max-width: 1366px) and (min-width: 1300px) {
-  .header-dropdown {
-    right: 117px;
-  }
-}
-@media (max-width: 1300px) and (min-width: 1200px) {
-  .header-dropdown {
-    right: 85px;
-  }
-} */
 
 @media (max-width: 375px) {
   .og-book-image {
@@ -2089,6 +2370,23 @@ tr.color-border {
   }
 }
 
+@media (max-width: 348px) {
+  h1.novel-heading {
+    font-size: 16px;
+}
+p.novel-excerpt {
+  font-size: 13px;
+}
+span.chapter {
+  font-size: 10px;
+}
+span.rating {
+  font-size: 10px;
+}
+.rating-chapter {
+  margin-bottom: 0;
+}
+} 
 @media (max-width: 320px) {
   .completed-books .completed-book-status {
     left: 37px;
@@ -2174,3 +2472,5 @@ tr.color-border {
     font-size: 16px;
   }
 }
+
+

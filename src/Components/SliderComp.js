@@ -99,7 +99,7 @@ function SliderComp({ images }) {
         //     backgroundColor: "red",
         //   }}
         // >
-        <img src={ele.image} className="slider-image" />
+        <img key={idx} src={ele.image} className="slider-image" />
         // </div>
       ))}
     </Slider>

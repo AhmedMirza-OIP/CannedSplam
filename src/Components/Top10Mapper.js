@@ -13,7 +13,7 @@ function Top10Mapper({ item, index, onClick }) {
         <p className="top10-book-genre">{item.genre}</p>
         <div className="star-and-rating">
           <StarRatings
-            starDimension={12}
+            starDimension={"12"}
             rating={item.rating}
             starRatedColor="gray"
             numberOfStars={1}

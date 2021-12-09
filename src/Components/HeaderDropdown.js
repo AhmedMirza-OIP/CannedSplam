@@ -43,7 +43,7 @@ function HeaderDropdown({closeDropDown}) {
           <p className="user-email-dropdown">admin@cannesplam.com</p>
           <div className="d-flex flex-row align-items-center">
             <StarRatings
-              starDimension={12}
+              starDimension={"12"}
               rating={1}
               starRatedColor="orange"
               numberOfStars={1}
