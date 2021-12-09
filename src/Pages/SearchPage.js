@@ -4,7 +4,6 @@ import book from "../Assets/Images/book-card.png";
 import { Book } from "@mui/icons-material";
 import Footer from "../Components/Footer";
 
-
 function SearchPage() {
   return (
     <>
@@ -118,7 +117,9 @@ function SearchPage() {
                     </ul>
                   </div>
                   <div className="col-lg-5 top-col">
-                    <h3 className="top-heading content-status">Content Status</h3>
+                    <h3 className="top-heading content-status">
+                      Content Status
+                    </h3>
                     <ul className="nav nav-pills search-top-tab serach-tabs">
                       <li className="nav-item">
                         <a className="nav-link active" href="#">
@@ -174,14 +175,19 @@ function SearchPage() {
                             <div className="row">
                               <div className="col-4">
                                 <a href="">
-                                <img
-                                  className="featured-img"
-                                  src={book}
-                                  alt=""
-                                ></img></a>
+                                  <img
+                                    className="featured-img"
+                                    src={book}
+                                    alt=""
+                                  ></img>
+                                </a>
                               </div>
                               <div className="col-8">
-                                <a href="#"><h1 className="novel-heading">{item.title}</h1></a>
+                                <a href="#">
+                                  <h1 className="novel-heading">
+                                    {item.title}
+                                  </h1>
+                                </a>
                                 <p className="novel-excerpt">
                                   {item.description}
                                 </p>
