@@ -872,6 +872,11 @@ tr.color-border {
   letter-spacing: 0.5px;
 }
 
+a.nav-link:hover {
+  background: darkgrey !important;
+  color: #ffffff !important;
+}
+
 .myitem svg {
   font-size: 22px;
 }
@@ -932,6 +937,14 @@ tr.color-border {
 
 /*======= searchbar page ===========*/
 
+.loader{
+display:flex;
+/* padding-left:35%; */
+justify-content: center;
+align-items: center;
+width: 100%;
+height:450px
+}
 .search-page {
   font-family: "Montserrat-Medium";
 }
@@ -950,9 +963,9 @@ h1.sidebar-heading {
   font-size: 18px;
   margin-bottom: 12px;
 }
-.side-bar-tabs .nav-link.active {
+/* .side-bar-tabs .nav-link.active {
   background: darkgray;
-}
+} */
 
 .top-main-head {
   font-size: 28px;
@@ -979,9 +992,9 @@ h3.top-heading {
   font-size: 15px;
   margin-right: 10px;
 }
-.search-tabs .nav-link.active {
+/* .search-tabs .nav-link.active {
   background-color: darkgray;
-}
+} */
 
 .serach-tabs .nav-link.active {
   background: darkgray;
@@ -1038,8 +1051,7 @@ span.chapter svg path {
 }
 
 .star i {
-  color: red;
-  font-size: 20px;
+  color:red;
 }
 .sorting-content .row {
   align-items: flex-end;
@@ -1069,7 +1081,13 @@ span.rating i {
 
 /*======= searchbar page end===========*/
 
+/* OVERWRITE CSS START */
 
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link{
+  color: grey;
+  background-color: white;
+}
+/* OVERWRITE CSS END */
 
 
 /*----- media query start ----*/
@@ -2472,5 +2490,8 @@ span.rating {
     font-size: 16px;
   }
 }
+
+
+
 
 
