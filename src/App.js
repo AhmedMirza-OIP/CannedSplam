@@ -3,6 +3,7 @@ import "slick-carousel/slick/slick-theme.css";
 import "../src/Styles/Header.css";
 import "../src/Styles/Footer.css";
 import "../src/Styles/Style.css";
+import "../src/Styles/clientStyles.css";
 // import '../../cannedsplam/src/App.css'
 import "../src/App.css";
 // import HomePage from "./Pages/HomePage";

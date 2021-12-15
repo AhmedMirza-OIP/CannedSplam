@@ -547,12 +547,18 @@ function HomePage() {
       <div className="container">
         {/* Most Popular  */}
         <div className="section-div most_popular">
-          <div className="section-heading-div">
+          <div className="mp-books-header">
+            <p className="mp-books-header-title">Most Popular</p>
+            <p className="mp-books-view-all">
+              VIEW ALL <FontAwesomeIcon icon={faAngleRight} />
+            </p>
+          </div>
+          {/* <div className="section-heading-div">
             <p className="section-heading">MOST POPULAR</p>
             <p className="view-all">
               VIEW ALL <FontAwesomeIcon icon={faAngleRight} />
             </p>
-          </div>
+          </div> */}
           {/* </div> */}
           <div className="row center-most-popular-in-mobile spacing-adjust">
             {mostPopular.map((item, idx) => (
@@ -578,7 +584,7 @@ function HomePage() {
           <div className="row row-425 spacing-adjust">
             {ongoing.map((item, idx) => (
               <OngoingNovelsMapper
-              key={idx}
+                key={idx}
                 item={item}
                 onClick={() => console.log("Book Card")}
               />
@@ -598,7 +604,7 @@ function HomePage() {
               <div className="books-container">
                 {top10.map((ele, idx) => (
                   <Top10Mapper
-                  key={idx}
+                    key={idx}
                     item={ele}
                     index={idx}
                     onClick={() => console.log("Top 10")}
@@ -613,7 +619,7 @@ function HomePage() {
               <div className="row-425 row-426 recent-width recent-books-container">
                 {recent.map((ele, idx) => (
                   <Top10Mapper
-                  key={idx}
+                    key={idx}
                     item={ele}
                     index={idx}
                     onClick={() => console.log("Top 10")}
@@ -741,14 +747,14 @@ function HomePage() {
             {window.screen.width > 1024
               ? completedDesktop.map((item, idx) => (
                   <CompletedNovels
-                  key={idx}
+                    key={idx}
                     item={item}
                     onClick={() => console.log("Book Card")}
                   />
                 ))
               : completed.map((item, idx) => (
                   <CompletedNovels
-                  key={idx}
+                    key={idx}
                     item={item}
                     onClick={() => console.log("Book Card")}
                   />
@@ -781,7 +787,7 @@ function HomePage() {
             <tbody>
               {chapterUpdates.map((item, idx) => (
                 // <tr key={idx} className={(idx % 2 !== 0 && "color-border"}>
-                <tr key={idx} className={`${idx % 2 !== 0 && 'color-border'}`}>
+                <tr key={idx} className={`${idx % 2 !== 0 && "color-border"}`}>
                   <td className="border-0 ">
                     <p className="table-labels pl-4">{item.name} </p>
                   </td>
