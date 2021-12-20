@@ -86,67 +86,6 @@ function HomePage() {
       description:
         "Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available  Lorem ipsum may be used as a placeholder before final copy is available..",
     },
-    {
-      _id: 22,
-      title:
-        "Book Title Goes Here On Two Lines Even Test Test Test Test Test Test Test",
-      category: "urban",
-      heading: "great marshal",
-      status: "completed",
-      chapters: 3471,
-      image: BOOK_CARD,
-      description:
-        "Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available  Lorem ipsum may be used as a placeholder before final copy is available..",
-    },
-    {
-      _id: 11,
-      title:
-        "Book Title Goes Here On Two Lines Even Test Test Test Test Test Test Test",
-      category: "urban",
-      heading: "great marshal",
-      chapters: 3471,
-      status: "completed",
-      image: BOOK_CARD,
-      description:
-        "Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available  Lorem ipsum may be used as a placeholder before final copy is available..",
-    },
-    {
-      _id: 12,
-      title:
-        "Book Title Goes Here On Two Lines Even Test Test Test Test Test Test Test",
-      category: "urban",
-      heading: "great marshal",
-      status: "completed",
-      chapters: 3471,
-      image: BOOK_CARD,
-      description:
-        "Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available  Lorem ipsum may be used as a placeholder before final copy is available..",
-    },
-
-    {
-      _id: 121,
-      title:
-        "Book Title Goes Here On Two Lines Even Test Test Test Test Test Test Test",
-      category: "urban",
-      heading: "great marshal",
-      chapters: 3471,
-      status: "completed",
-      image: BOOK_CARD,
-      description:
-        "Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available  Lorem ipsum may be used as a placeholder before final copy is available..",
-    },
-    {
-      _id: 1222,
-      title:
-        "Book Title Goes Here On Two Lines Even Test Test Test Test Test Test Test",
-      category: "urban",
-      heading: "great marshal",
-      status: "completed",
-      chapters: 3471,
-      image: BOOK_CARD,
-      description:
-        "Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available  Lorem ipsum may be used as a placeholder before final copy is available..",
-    },
   ]);
 
   const [ongoing, setOngoing] = useState([
