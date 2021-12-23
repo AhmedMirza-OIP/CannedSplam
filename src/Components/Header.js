@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 
 function Header(props) {
   const [text, setText] = useState("");
-  const [showDropdown, setShowDropdown] = useState(false);
+  const [showDropdown, setShowDropdown] = useState('');
   const navigate = useNavigate();
   return (
     <div className="container-fluid header-bg">
@@ -41,7 +41,8 @@ function Header(props) {
             </a>
             <div
               className="user-acc-circle"
-              onClick={() => setShowDropdown(!showDropdown)}
+              onMouseEnter={() => setShowDropdown(true)}
+              onMouseLeave={()=> setShowDropdown(false)}
             >
               <p className="user-acc-label">C</p>
               {showDropdown && (

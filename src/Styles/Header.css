@@ -33,11 +33,11 @@
 /* new end  */
 
 @media (min-width: 768px) {
-.col-md-3 {
+/* .col-md-3 {
   -ms-flex: 0 0 22%;
   flex: 0 0 22%;
   max-width: 22%;
-  }
+  } */
 }
 
 .header-logo {
@@ -72,7 +72,6 @@ p.cat-label-text {
   letter-spacing: 0.01em;
   margin: 0;
 }
-
 svg.svg-inline--fa.fa-sort-down.fa-w-10.mb-1 {
   margin-top: -4px;
 }
@@ -166,6 +165,8 @@ svg.search-icon {
     flex: 0 0 22.5%;
     max-width: 22.5%;
     padding-right: 20px;
+    flex-direction: row;
+    margin-top: 0.5rem!important;
   }
 }
 
@@ -188,7 +189,7 @@ svg.search-icon {
 }
 
 .community-link:hover {
-  color: grey;
+  color: #3b66f5;
   text-decoration: none;
 }
 
@@ -352,6 +353,7 @@ p.cat-label svg:last-child {
   display: flex;
   flex-direction: row;
   align-items: center;
+  flex-wrap: nowrap;
 }
 
 .small-logo {
@@ -635,7 +637,31 @@ p.cat-label svg:last-child {
     display: none;
   }
 }
+.myitem.col-md-5:hover .search-container {
+  border: 1px solid #3b66f5;
+  background-color: rgba(208, 222, 255, 0.3);
+  cursor: pointer;
+}
 
+.myitem.col-md-5:hover .search-container svg.search-icon {
+  filter: invert(103%) sepia(44%) saturate(3434%) hue-rotate(218deg)
+    brightness(98%) contrast(97%);
+}
+
+.myitem.col-md-5:hover .search-container input.search-textInput::placeholder {
+  color: #3b66f5;
+
+}
+
+.myitem.col-md-5:hover .search-container input.search-textInput {
+  background-color: transparent;
+  cursor: pointer;
+
+}
+.cat-label:hover svg.svg-inline-header-cat-icon , .cat-label:hover p.cat-label-text , .cat-label:hover svg.svg-inline--fa.fa-sort-down.fa-w-10.mb-1 path {
+  fill:#3b66f5;
+  color:#3b66f5
+}
 
 
 /* @media (max-width: 375px) {

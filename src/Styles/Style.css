@@ -166,7 +166,7 @@ p.view-all:hover {
   width: 18px;
   height: 18px;
   display: flex;
-  fill: #8D939D;
+  fill: #8d939d;
 }
 
 .mp-book-category-tag {
@@ -449,16 +449,16 @@ svg.mp-favorite-heart:active {
 
 .top10-book-title {
   font-weight: 500;
-    margin: 0;
-    font-family: "Montserrat-bold";
-    text-transform: capitalize;
-    font-size: 18px;
-    max-width: 251px;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-line-clamp: 1;
-    -webkit-box-orient: vertical;
+  margin: 0;
+  font-family: "Montserrat-bold";
+  text-transform: capitalize;
+  font-size: 18px;
+  max-width: 251px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
 }
 
 .top10-book-genre {
@@ -611,7 +611,7 @@ p.free-book-category svg {
 
 .gradient-border {
   position: relative;
-  z-index: 99;
+  z-index: 0;
   overflow: hidden;
   border-radius: 20px;
 }
@@ -1015,17 +1015,15 @@ a.nav-link:hover {
   flex: 50%; /* or - flex: 0 50% - or - flex-basis: 50% - */
 }
 
-
-
 /*======= searchbar page ===========*/
 
-.loader{
-display:flex;
-/* padding-left:35%; */
-justify-content: center;
-align-items: center;
-width: 100%;
-height:450px
+.loader {
+  display: flex;
+  /* padding-left:35%; */
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 450px;
 }
 .search-page {
   font-family: "Montserrat-Medium";
@@ -1051,8 +1049,8 @@ h1.sidebar-heading {
 
 .top-main-head {
   font-size: 28px;
-  color: rgba(18,18,23,.6);
-  font-family: 'montserrat-semibold';
+  color: rgba(18, 18, 23, 0.6);
+  font-family: "montserrat-semibold";
   padding-bottom: 20px;
   border-bottom: 2px solid #ebeaea;
 }
@@ -1060,7 +1058,7 @@ h1.sidebar-heading {
 h3.top-heading {
   font-size: 16px;
   color: rgb(93 93 110 / 60%);
-  font-family: 'montserrat-semibold';
+  font-family: "montserrat-semibold";
   margin-top: 10px;
 }
 .serach-tabs {
@@ -1101,7 +1099,7 @@ span.chapter svg {
 }
 h1.novel-heading {
   font-size: 20px;
-  font-family: 'montserrat-semibold';
+  font-family: "montserrat-semibold";
 }
 
 p.novel-excerpt {
@@ -1118,14 +1116,14 @@ p.novel-excerpt {
 span.rating {
   color: #777;
   margin-right: 14px;
-  font-family: 'montserrat-semibold';
+  font-family: "montserrat-semibold";
   font-size: 16px;
 }
 
 span.chapter {
   color: #777;
   font-size: 16px;
-  font-family: 'montserrat-semibold';
+  font-family: "montserrat-semibold";
 }
 
 span.chapter svg path {
@@ -1133,7 +1131,7 @@ span.chapter svg path {
 }
 
 .star i {
-  color:red;
+  color: red;
 }
 .sorting-content .row {
   align-items: flex-end;
@@ -1165,12 +1163,12 @@ span.rating i {
 
 /* OVERWRITE CSS START */
 
-.nav-pills .nav-link.active, .nav-pills .show>.nav-link{
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
   color: grey;
   background-color: white;
 }
 /* OVERWRITE CSS END */
-
 
 /*----- media query start ----*/
 
@@ -1184,7 +1182,6 @@ span.rating i {
 }
 
 @media (max-width: 1366px) {
-
   /*----- searchbar page ----*/
 
   .serach-tabs .nav-link {
@@ -1452,12 +1449,16 @@ span.rating i {
   /*=== searchbar page end===*/
 }
 @media (max-width: 1024px) and (min-width: 768px) {
-  .section-div.most_popular .row.center-most-popular-in-mobile.spacing-adjust .most-popular-books {
+  .section-div.most_popular
+    .row.center-most-popular-in-mobile.spacing-adjust
+    .most-popular-books {
     width: 50%;
     max-width: 100%;
     padding: 0;
   }
-  .section-div.most_popular .row.center-most-popular-in-mobile.spacing-adjust .most-popular-books {
+  .section-div.most_popular
+    .row.center-most-popular-in-mobile.spacing-adjust
+    .most-popular-books {
     max-width: 100% !important;
     width: 50% !important;
   }
@@ -1483,7 +1484,6 @@ span.rating i {
     flex-direction: column;
     align-items: center;
     padding: 0px;
-
   }
   .free-book-label {
     margin: 0;
@@ -1718,7 +1718,8 @@ span.rating i {
   .side-bar-tabs > li.nav-item {
     flex: 100%;
   }
-  
+
+
   /*==== searchbar page end===*/
 }
 
@@ -1783,7 +1784,7 @@ span.rating i {
   }
   p.mp-books-header-title {
     font-size: 22px !important;
-    font-family: 'montserrat-semibold' !important;
+    font-family: "montserrat-semibold" !important;
   }
   .mp-book-image {
     width: 100% !important;
@@ -2012,7 +2013,7 @@ span.rating i {
   }
   span.rating {
     font-size: 12px;
-  } 
+  }
   span.chapter {
     font-size: 12px;
   }
@@ -2090,7 +2091,7 @@ span.rating i {
   }
   /*.spacing-adjust {
     -ms-overflow-style: none; /* IE and Edge */
-    /* scrollbar-width: none; /* Firefox */
+  /* scrollbar-width: none; /* Firefox */
   /*}*/
   .completed-books .completed-book-heading {
     width: 64px;
@@ -2439,10 +2440,14 @@ span.rating i {
     margin-top: 0px;
     min-height: 200px;
   }
-  .section-div.most_popular .row.center-most-popular-in-mobile.spacing-adjust .most-popular-books {
+  .section-div.most_popular
+    .row.center-most-popular-in-mobile.spacing-adjust
+    .most-popular-books {
     margin: 0 auto;
   }
-  .section-div.most_popular .row.center-most-popular-in-mobile.spacing-adjust .most-popular-books {
+  .section-div.most_popular
+    .row.center-most-popular-in-mobile.spacing-adjust
+    .most-popular-books {
     max-width: 100% !important;
     width: 100% !important;
   }
@@ -2451,7 +2456,6 @@ span.rating i {
     height: 100% !important;
   }
 }
-
 
 @media (max-width: 375px) {
   p.mp-books-header-title {
@@ -2499,20 +2503,20 @@ span.rating i {
 @media (max-width: 348px) {
   h1.novel-heading {
     font-size: 16px;
+  }
+  p.novel-excerpt {
+    font-size: 13px;
+  }
+  span.chapter {
+    font-size: 10px;
+  }
+  span.rating {
+    font-size: 10px;
+  }
+  .rating-chapter {
+    margin-bottom: 0;
+  }
 }
-p.novel-excerpt {
-  font-size: 13px;
-}
-span.chapter {
-  font-size: 10px;
-}
-span.rating {
-  font-size: 10px;
-}
-.rating-chapter {
-  margin-bottom: 0;
-}
-} 
 @media (max-width: 320px) {
   .completed-books .completed-book-status {
     left: 37px;
@@ -2601,17 +2605,14 @@ span.rating {
 
 @media (max-width: 768px) {
   .section-div.most_popular .row.center-most-popular-in-mobile.spacing-adjust {
-      display: block;
+    display: block;
   }
 
-  .section-div.most_popular .row.center-most-popular-in-mobile.spacing-adjust .most-popular-books {
-      width: 75%;
-      max-width: 90%;
-      padding: 0;
+  .section-div.most_popular
+    .row.center-most-popular-in-mobile.spacing-adjust
+    .most-popular-books {
+    width: 75%;
+    max-width: 90%;
+    padding: 0;
   }
 }
-
-
-
-
-

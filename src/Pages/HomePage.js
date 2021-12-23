@@ -1,6 +1,15 @@
 import React from "react";
 import Header from "../Components/Header";
 import { useState } from "react";
+import Logo from "../Assets/Images/csnovels-logo.svg";
+import google_img from "../Assets/Images/google.png";
+// import facebook_img from "../Assets/Images/facebook.png";
+import discord_img from "../Assets/Images/discord.png";
+import discord_img2 from "../Assets/Images/discord (2).png";
+import twitter_img from "../Assets/Images/twitter.png";
+import mail_img from "../Assets/Images/mail.png";
+import huawei_img from "../Assets/Images/huawei.png";
+
 import {
   faThLarge,
   faBook,
@@ -12,6 +21,11 @@ import MostWantedNovelsMapper from "../Components/MostWantedNovelsMapper";
 import OngoingNovelsMapper from "../Components/OngoingNovelsMapper";
 import Top10Mapper from "../Components/Top10Mapper";
 import SliderComp from "../Components/SliderComp";
+// import Modal from "../Components/Modal";
+import ReactDOM from "react-dom";
+import { GoogleLogin } from "react-google-login";
+import Modal from "react-modal";
+
 import THREE_LINES from "../Assets/Images/three-lines.png";
 import BOOK1 from "../Assets/Images/top10/1.png";
 import BOOK2 from "../Assets/Images/top10/2.png";
@@ -35,7 +49,25 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import moment from "moment";
 import CompletedNovels from "../Components/CompletedNovels";
 
-function HomePage() {
+import cs from "../Assets/Images/backgroung-image.png";
+import "../Styles/Mirza.css";
+import DiscordOauth2 from "discord-oauth2";
+
+console.log(DiscordOauth2, "-------------------------------------------");
+const customStyles = {
+  content: {
+    top: "50%",
+    left: "50%",
+    right: "auto",
+    bottom: "auto",
+    marginRight: "-50%",
+    transform: "translate(-50%, -50%)",
+  },
+};
+const HomePage = () => {
+  // const [dateDiscord, setDateBegin] = useState(new Date.now())
+  // const datee = new Date().getMilliseconds()
+  // var dateDiscord = datee
   const freeBookOfWeek = {
     _id: 1,
     title:
@@ -180,8 +212,7 @@ function HomePage() {
       _id: 2,
       heading: "great marshal",
       status: "completed",
-      title:
-        "Book Title Goes Here On Even Two Lines Test Test Test Test Test Test Test",
+      title: "Book Title Goes Here",
       category: "urban",
       chapters: 3471,
       image: BOOK_CARD,
@@ -477,6 +508,84 @@ function HomePage() {
       image: SLIDE_IMAGE_1,
     },
   ]);
+  let subtitle;
+  const [modalIsOpen, setIsOpen] = React.useState(false);
+
+  const openModal = () => {
+    setIsOpen(true);
+  };
+
+  const afterOpenModal = () => {
+    // references are now sync'd and can be accessed.
+    console.log("object");
+  };
+
+  const closeModal = () => {
+    setIsOpen(false);
+  };
+
+  // const clientId =
+  //   "658977310896-knrl3gka66fldh83dao2rhgbblmd4un9.apps.googleusercontent.com";
+
+  const responseGoogle = (response) => {
+    console.log(response);
+  };
+  const oauth = new DiscordOauth2();
+
+  const dscrd_auth = async () => {
+    let headerss = new Headers();
+
+    headerss.append("Access-Control-Allow-Origin", "http://localhost:3000");
+    headerss.append("Access-Control-Request-Headers", "Content-Type");
+    headerss.append("Content-Type", "application/x-www-form-urlencoded");
+    headerss.append("Access-Control-Allow-Headers", "Accept");
+    // try {
+    //   const res = await oauth
+    //   // client_id=923179004788355082
+    //   // &redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F
+    //   // &response_type=code
+    //   // &scope=email
+    //     .tokenRequest({
+    //       clientId: "923191410671378522",
+    //       redirectUri: "http://localhost:3000",
+    //       response_type: "OAuth2",
+    //       scope: "ahmed.mirza@oip.com.pk",
+    //       grantType: "authorization_code",
+    //       clientSecret: "_QyJxP33Rx9LNMSNlW5aLkzy5SjoNOwP",
+    //       access_token:"OTIxMzU4NjIwNzI4MzY5MTYy.YcMOoA.hZ19Xuo8ABL7p3B8UR7C_b4drpQ",
+    //     })
+    //     .then(console.log);
+    // } catch (error) {
+    //   console.log(error);
+    // }
+    //  var unique = Math.random()
+    const data = {
+      clientId: "923179004788355082",
+      clientSecret: "_QyJxP33Rx9LNMSNlW5aLkzy5SjoNOwP",
+      access_token:
+        "OTIxMzU4NjIwNzI4MzY5MTYy.YcMOoA.hZ19Xuo8ABL7p3B8UR7C_b4drpQ",
+      code: "standard OAuth2",
+      scope: "email identify connections",
+      grantType: "authorization_code",
+      redirectUri: `http://localhost:3000/`,
+    };
+    const URL =
+      "https://discord.com/api/oauth2/authorize?client_id=923179004788355082&redirect_uri=http://localhost:3000/&response_type=code&scope=email identify connections";
+    fetch(
+      `http://discord.com/api/oauth2/authorize?client_id=${data.clientId}&redirect_uri=${data.redirectUri}&response_type=code&scope=${data.scope}`,
+      {
+        mode: "cors",
+        headers: headerss,
+        method: "GET",
+      }
+    )
+      .then(function (res) {
+        console.log(res);
+      })
+      .catch(function (res) {
+        console.log(res);
+      });
+  };
   return (
     <>
       {/* <div className="App"> */}
@@ -680,7 +789,12 @@ function HomePage() {
 
         {/* Completed Novels  */}
         <div className="section-div complete_novels">
-          <p className="section-heading">COMPLETED NOVELS</p>
+          <div className="section-heading-div">
+            <p className="section-heading">COMPLETED NOVELS</p>
+            <p className="view-all">
+              VIEW ALL <FontAwesomeIcon icon={faAngleRight} />
+            </p>
+          </div>
           {/* </div> */}
           <div className="row">
             {window.screen.width > 1024
@@ -699,6 +813,151 @@ function HomePage() {
                   />
                 ))}
           </div>
+        </div>
+        <div>
+          <button onClick={openModal}>Open Modal</button>
+          <Modal
+            isOpen={modalIsOpen}
+            onAfterOpen={afterOpenModal}
+            onRequestClose={closeModal}
+            style={customStyles}
+            contentLabel="Example Modal"
+          >
+            <div className="modal-css" onClick={closeModal}>
+              <svg data-dismiss="modal"
+                xmlns="http://www.w3.org/2000/svg"
+                data-name="Layer 1"
+                viewBox="0 0 64 64"
+              >
+                <line
+                  x1="9.37"
+                  x2="54.63"
+                  y1="9.37"
+                  y2="54.63"
+                  fill="none"
+                  stroke="#010101"
+                  stroke-miterlimit="10"
+                  stroke-width="4"
+                />
+                <line
+                  x1="9.37"
+                  x2="54.63"
+                  y1="54.63"
+                  y2="9.37"
+                  fill="none"
+                  stroke="#010101"
+                  stroke-miterlimit="10"
+                  stroke-width="4"
+                />
+              </svg>
+              <img src={Logo} className="header-logo" />
+              <h2 style={{ color: "black", marginTop: "30px" }}>
+                Welcome To Canned Splam
+              </h2>
+              <div>Access tons of novels and comcis by a single tap</div>
+              <GoogleLogin
+                clientId="85172365095-krm5hqh707fq8o6p5ovs7vla5d8r5q2r.apps.googleusercontent.com"
+                buttonText="Login"
+                onRequest={() => {
+                  console.log("login......................");
+                }}
+                onSuccess={responseGoogle}
+                onFailure={responseGoogle}
+                render={(renderProps) => {
+                  console.log(renderProps, "::::::::::::::");
+                  return (
+                    <div
+                      className="google-logIn-div"
+                      onClick={() => renderProps.onClick()}
+                    >
+                      <img
+                        className="google-Icon"
+                        src={google_img}
+                        style={{ width: "35px", height: "auto" }}
+                      />
+                      <p className="google-logIn-p">LOG IN WITH GOOGLE</p>
+                    </div>
+                  );
+                }}
+                // cookiePolicy={"single_host_origin"}
+              />
+              ,
+              {/* <div
+
+                onClick={() => {
+                  console.log("object");
+                  // dscrd_auth();
+                }}
+                className="facebook-logIn-div"
+              >
+                <span className="facebook-Icon">
+                  <img
+                    src={facebook_img}
+                    style={{ width: "35px", height: "auto" }}
+                  />
+                </span> */}
+              {/* <a href="https://discord.com/api/oauth2/authorize?client_id=923179004788355082&redirect_uri=http://localhost:3000/&response_type=code&scope=email identify connections" >    <p className="facebook-logIn-p">LOG IN WITH FACEBOOK</p></a> */}
+              {/* <p className="facebook-logIn-p">LOGIN WITH FACEBOOK</p>
+              </div> */}
+              <div
+                onClick={() => {
+                  console.log("object");
+                  dscrd_auth();
+                }}
+                className="discord-logIn-div"
+              >
+                <span className="discord-Icon">
+                  <img
+                    src={discord_img2}
+                    style={{ width: "35px", height: "auto" }}
+                  />
+                </span>
+
+                <p className="discord-logIn-p">
+                  <a href="https://discord.com/api/oauth2/authorize?client_id=923179004788355082&redirect_uri=http://localhost:3000/&response_type=code&scope=email identify connections">
+                    LOGIN WITH DISCORD
+                  </a>
+                </p>
+              </div>
+              {/*               
+              <div className="signIn-logos">
+                <img
+                  src={twitter_img}
+                  style={{ width: "50px", height: "50px" }}
+                />
+                <img src={mail_img} style={{ width: "50px", height: "50px" }} />
+                <span className="huawei-Icon">
+                  <img
+                    class
+                    src={huawei_img}
+                    style={{ width: "40px", height: "40px" }}
+                  />
+                </span>
+              </div> */}
+              <hr
+                style={{
+                  color: "grey",
+                  backgroundColor: "grey",
+                  height: 0.5,
+                  width: "60%",
+                  marginTop:'30px'
+                }}
+              />
+              <div className="text-color">
+                <p>Don't have an account? </p>
+                <p>OR</p>
+              </div>
+              <p style={{ color: "blue" }}>Create Account</p>
+            </div>
+
+            {/* <form>
+            <input />
+            <button>tab navigation</button>
+            <button>stays</button>
+            <button>inside</button>
+            <button>the modal</button>
+          </form> */}
+          </Modal>
         </div>
 
         {/* Recent Chapter Updates  */}
@@ -751,6 +1010,6 @@ function HomePage() {
       {/* </div> */}
     </>
   );
-}
+};
 
 export default HomePage;

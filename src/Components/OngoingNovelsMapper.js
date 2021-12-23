@@ -18,7 +18,25 @@ function OngoingNovelsMapper({ item, onClick }) {
           ? `${item.title.substring(0, 40)}...`
           : item.title}
       </p>
-      <p className="og-book-chapters">{`${item.chapters} Chapters`}</p>
+      <div className="mp-book-chapters">
+          <svg
+            class="mp-book-chapter-icon"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 12 16"
+          >
+            <path d="M3,12h8c0.6,0,1-0.4,1-1V1c0-0.6-0.4-1-1-1H2C0.9,0,0,0.9,0,2v11c0,1.7,1.3,3,3,3h8c0.6,0,1-0.4,1-1 s-0.4-1-1-1H3c-0.6,0-1-0.4-1-1S2.4,12,3,12z" />
+          </svg>
+          <p className="mp-book-chapter-number">{`${item.chapters} Chapters`}</p>
+          <svg
+            class="mp-favorite-heart"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+          >
+            <path d="M12 4.248c-3.148-5.402-12-3.825-12 2.944 0 4.661 5.571 9.427 12 15.808 6.43-6.381 12-11.147 12-15.808 0-6.792-8.875-8.306-12-2.944z" />
+          </svg>
+        </div>
     </div>
   );
 }

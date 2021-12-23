@@ -15,9 +15,9 @@ function MostWantedNovelsMapper({ item, onClick }) {
       <div className="book-details">
         <p className="mp-book-title">
           {window.screen.width <= 768
-            ? `${item.title.substring(0, 30)}...`
+            ? `${item.title.substring(0, 30)}`
             : item.title.length > 50
-            ? `${item.title.substring(0, 50)}...`
+            ? `${item.title.substring(0, 50)}`
             : item.title}
         </p>
 
@@ -28,7 +28,7 @@ function MostWantedNovelsMapper({ item, onClick }) {
         </div>
         <p className="mp-book-description">
           {item.description.length > 70
-            ? `${item.description.substring(0, 70)}...`
+            ? `${item.description.substring(0, 70)}`
             : item.description}
         </p>
 
