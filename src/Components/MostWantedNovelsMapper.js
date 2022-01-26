@@ -1,13 +1,25 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faThLarge, faBook } from "@fortawesome/free-solid-svg-icons";
 import "../Styles/clientStyles.css";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import CI from "./../Assets/Images/Categories Icon.svg";
 import CCI from "./../Assets/Images/Chapter Count Icon.svg";
 import Cover from "./../Assets/Images/cover.png";
-function MostWantedNovelsMapper({ item, onClick }) {
+import * as actions from '../store/actions/actions';
+// import * as types from '../store/actions/actions'
+import {connect} from 'react-redux';
+function MostWantedNovelsMapper({ item,fav_book,lib_book}) {
+  // const [data, setData] = useState();
+
   return (
-    <div className="most-popular-books mb-5">
+    <div
+      className="most-popular-books mb-5"
+      onClick={() => {
+        fav_book(item._id).then(()=>lib_book(item))
+        // lib_book(item)
+        // console.log(item._id)
+      }}
+    >
       <div className="mp-image-and-text-container">
         <img src={Cover} className="mp-book-cover" />
       </div>
@@ -55,13 +67,13 @@ function MostWantedNovelsMapper({ item, onClick }) {
           </svg>
           <p className="mp-book-chapter-number">{`${item.chapters} Chapters`}</p>
           <svg
-            class="mp-favorite-heart"
+            class={item.isFavorite? ("mp-favorite-heart2"):("mp-favorite-heart")}
             xmlns="http://www.w3.org/2000/svg"
             width="24"
             height="24"
             viewBox="0 0 24 24"
           >
-            <path d="M12 4.248c-3.148-5.402-12-3.825-12 2.944 0 4.661 5.571 9.427 12 15.808 6.43-6.381 12-11.147 12-15.808 0-6.792-8.875-8.306-12-2.944z" />
+          <path d="M12 4.248c-3.148-5.402-12-3.825-12 2.944 0 4.661 5.571 9.427 12 15.808 6.43-6.381 12-11.147 12-15.808 0-6.792-8.875-8.306-12-2.944z" />
           </svg>
         </div>
       </div>
@@ -123,28 +135,10 @@ function MostWantedNovelsMapper({ item, onClick }) {
     // </div>
   );
 }
-
-export default MostWantedNovelsMapper;
-{
-  /* <div class="col-lg-4 col-md-6 col-sm-6 most-popular-books">
-                <img src="/uploads/cover.png" class="mp-book-cover" />
-                <div class="book-details">
-                    <p class="mp-book-title">Book Title Goes Here On Two Lines Even Test Test T...</p>
-                    <div class="mp-book-category">
-                        <img src="/uploads/Categories Icon.svg" class="mp-book-cat-icon">
-                        <p class="mp-book-category-tag">urban</p>
-                        <p class="mp-book-status">Ongoing</p>
-                    </div>
-                    <p class="mp-book-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean id dictum erat, vitae</p>
-                    <div class="mp-book-chapters">
-                        <img src="/uploads/Chapter Count Icon.svg" class="mp-book-chapter-icon">
-                         <p class="mp-book-chapter-number">3471 Chapters</p>
-                         <svg class="mp-favorite-heart-unfilled" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 4.248c-3.148-5.402-12-3.825-12 2.944 0 4.661 5.571 9.427 12 15.808 6.43-6.381 12-11.147 12-15.808 0-6.792-8.875-8.306-12-2.944z"/></svg>
-                    </div>
-                </div> 
-            </div>  */
-}
-
+const mapstatetoprops = ({books_reducer,library_reducer})=>{
+  return {books_reducer,library_reducer};
+} 
+export default connect(mapstatetoprops,actions)(MostWantedNovelsMapper);
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { faThLarge, faBook } from "@fortawesome/free-solid-svg-icons";
 

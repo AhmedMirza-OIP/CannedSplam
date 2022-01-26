@@ -11,7 +11,7 @@ function SearchPage() {
   const [activeContentStatus, setActiveContentStatus] = useState("");
   const [activeSortBy, setActiveSortBy] = useState("");
   const [isLoading, setIsLoading] = useState(true);
-  const [data, setData] = useState(dummyCards);
+    const [data, setData] = useState(dummyCards);
 
   useEffect(() => {
     console.log({ activeGenreOfNovels });
@@ -551,7 +551,7 @@ useEffect(() => {
                         return (
                           <div key={index} className="col-lg-6"
                           onClick={() => {
-                            setData({...data,...item.isFavorite=true});
+                            setData({...data,...item.isFavorite=!item.isFavorite});
                           }}>
                             <div className="novel-box">
                               <div className="row">

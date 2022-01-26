@@ -234,7 +234,9 @@ svg.mp-favorite-heart {
   fill: #8d939d;
 }
 
-svg.mp-favorite-heart:hover {
+svg.mp-favorite-heart2 {
+  transform: scale(0.8);
+  margin-left: auto;
   fill: #f70000;
   cursor: pointer;
 }

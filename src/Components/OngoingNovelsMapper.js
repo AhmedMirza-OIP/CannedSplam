@@ -7,9 +7,9 @@ function OngoingNovelsMapper({ item, onClick }) {
     <div className="col-lg-2 col-md-3 col-sm-4 og-books">
       <div className="og-image-and-text-container">
         <img src={item.image} className="og-book-image" />
-        <p className="mp-cs-text">CS</p>
-        <p className="og-book-status">{item.status} </p>
-        <p className="og-book-heading">{item.heading} </p>
+        {/* <p className="mp-cs-text">CS</p> */}
+        {/* <p className="og-book-status">{item.status} </p> */}
+        {/* <p className="og-book-heading">{item.heading} </p> */}
       </div>
       <p className="og-book-title">
         {window.screen.width <= 768
